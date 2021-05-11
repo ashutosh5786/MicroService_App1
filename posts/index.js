@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 const { randomBytes } = require("crypto");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
+app.use(cors());
 const posts = {};
 
 app.get("/post", (req, res) => {
